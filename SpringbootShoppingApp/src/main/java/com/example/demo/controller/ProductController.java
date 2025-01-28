@@ -23,7 +23,7 @@ import com.example.demo.exceptions.ProductNotFound;
 import lombok.AllArgsConstructor;
 
 @RestController // @Controller+@ResponseBody
-@RequestMapping("/products") // http://localhost:2001/products
+@RequestMapping("/products") // http://localhost:8080/products
 @AllArgsConstructor
 public class ProductController {
 

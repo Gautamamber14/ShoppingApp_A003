@@ -1,7 +1,11 @@
 package com.example.demo.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -27,4 +31,9 @@ public class Product {
 
     @NotBlank(message = "Product validity is mandatory")
     private String productValidity;
+    
+    @ManyToOne
+    @JoinColumn(name = "cart_Id", referencedColumnName = "cartId")
+    @JsonBackReference
+    private Cart cart;
 }
